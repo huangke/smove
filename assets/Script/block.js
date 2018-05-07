@@ -1,36 +1,76 @@
-var direction = require("direction")
+var Direction = require("direction");
+var BlockPool = require("BlockPool");
 cc.Class({
     extends: cc.Component,
 
     properties: {
         speed: 1,
-        dir: direction.left,// 0 left, 1 right, 2 down
-        isInit: false
+        dir: Direction.left,
+        _isInit: false,
+        _game: null,
+        _isCached: false
     },
 
-    init (speed,dir) {
+    create: function(pos,speed,dir,game) {
+        this.node.active = true;
+        this.node.setPosition(pos);
         this.speed = speed;
         this.dir = dir;
-        this.isInit = true;
+        this._isInit = true;
+        this._game = game;
     },
 
-    update (dt) {
-        if(!this.isInit) {
+    update: function(dt) {
+        if(!this._isInit) {
             return;
         }
+        this.changePos();
+        this.checkCollide();
+    },
+
+    changePos: function() {
         switch(this.dir) {
-            case direction.left:
+            case Direction.left:
                 this.node.x -= this.speed;
+                if(this.node.x < this._game.centerNode.x - cc.winSize.width/2 - 40) {
+                    this.releaseSelf();
+                }
                 break;
-            case direction.right:
+            case Direction.right:
                 this.node.x += this.speed;
+                if(this.node.x > this._game.centerNode.x + cc.winSize.width/2 + 40) {
+                    this.releaseSelf();
+                }
                 break;
-            case direction.up:
+            case Direction.up:
                 this.node.y += this.speed;
+                if(this.node.y > this._game.centerNode.y + cc.winSize.height/2 + 40) {
+                    this.releaseSelf();
+                }
                 break;
-            case direction.down:
+            case Direction.down:
                 this.node.y -= this.speed;
+                if(this.node.y < this._game.centerNode.y - cc.winSize.height/2 - 40) {
+                    this.releaseSelf();
+                }
                 break;
         }
     },
+
+    releaseSelf: function() {
+        this.node.active = false;
+        BlockPool.releaseBlock(this);
+    },
+
+    hide: function() {
+        this.node.active = false;
+    },
+
+    checkCollide: function() {
+        var playPos = this._game._player.getPosition();
+        var distance = cc.pDistance(playPos, this.node.getPosition());
+        if(distance < (this._game.playerRadius + this._game.blockRadius) / 2) {
+            this._game.gameOver();
+        }
+    }
 });

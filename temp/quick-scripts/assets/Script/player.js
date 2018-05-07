@@ -4,19 +4,31 @@ cc._RF.push(module, 'a2cdeyIgrVJ9ohylWnW67vy', 'player', __filename);
 
 "use strict";
 
+var Direction = require("direction");
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        size: 80
+        moveSize: 80,
+        offSetX: 0,
+        offSetY: 0,
+        maxOffSet: 1,
+        minOffSet: -1,
+        _game: null,
+        actionDuration: 0.1
     },
 
     onLoad: function onLoad() {
         this.setInputConstrol();
     },
+
     start: function start() {},
 
-
+    stopAllActions: function stopAllActions() {
+        this.offSetX = 0;
+        this.offSetY = 0;
+        this.node.stopAllActions();
+    },
     // update (dt) {},
 
     setInputConstrol: function setInputConstrol() {
@@ -24,32 +36,74 @@ cc.Class({
         cc.eventManager.addListener({
             event: cc.EventListener.KEYBOARD,
             onKeyPressed: function onKeyPressed(keyCode, event) {
+                var dir = Direction.left;
                 switch (keyCode) {
                     case cc.KEY.left:
-                        self.node.x -= self.size;
+                        dir = Direction.left;
                         break;
                     case cc.KEY.right:
-                        self.node.x += self.size;
+                        dir = Direction.right;
                         break;
                     case cc.KEY.up:
-                        self.node.y += self.size;
+                        dir = Direction.up;
                         break;
                     case cc.KEY.down:
-                        self.node.y -= self.size;
+                        dir = Direction.down;
                         break;
                 }
-            },
-            onKeyReleased: function onKeyReleased(keyCode, event) {
-                switch (keyCode) {
-                    case cc.KEY.a:
-                        self.accLeft = false;
-                        break;
-                    case cc.KEY.d:
-                        self.accRight = false;
-                        break;
-                }
+                // self.changePos(dir);
             }
+            // onKeyReleased: function(keyCode, event) {
+            //     switch(keyCode) {
+            //         case cc.KEY.a:
+            //             self.accLeft = false;
+            //             break;
+            //         case cc.KEY.d:
+            //             self.accRight = false;
+            //             break;
+            //     }
+            // }
         }, self.node);
+    },
+
+    changePos: function changePos(dir) {
+        if (!this._game._isStart) {
+            return;
+        }
+        switch (dir) {
+            case Direction.left:
+                if (this.offSetX > this.minOffSet) {
+                    // this.node.x -= this.moveSize;
+                    var action = cc.moveBy(this.actionDuration, -this.moveSize, 0);
+                    this.node.runAction(action);
+                    this.offSetX--;
+                }
+                break;
+            case Direction.right:
+                if (this.offSetX < this.maxOffSet) {
+                    // this.node.x += this.moveSize;
+                    var action = cc.moveBy(this.actionDuration, this.moveSize, 0);
+                    this.node.runAction(action);
+                    this.offSetX++;
+                }
+                break;
+            case Direction.up:
+                if (this.offSetY < this.maxOffSet) {
+                    // this.node.y += this.moveSize;
+                    var action = cc.moveBy(this.actionDuration, 0, this.moveSize);
+                    this.node.runAction(action);
+                    this.offSetY++;
+                }
+                break;
+            case Direction.down:
+                if (this.offSetY > this.minOffSet) {
+                    // this.node.y -= this.moveSize;
+                    var action = cc.moveBy(this.actionDuration, 0, -this.moveSize);
+                    this.node.runAction(action);
+                    this.offSetY--;
+                }
+                break;
+        }
     }
 });
 
