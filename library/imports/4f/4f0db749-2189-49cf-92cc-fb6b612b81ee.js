@@ -22,7 +22,7 @@ var BlockPool = {
         if (!newBlock) {
             var block = cc.instantiate(blockPrefab);
             newBlock = block.getComponent('block');
-            game.node.addChild(block);
+            game.node.addChild(block, 3);
             newBlock._isCached = false;
             this.blockCache.push(newBlock);
         }

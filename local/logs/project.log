@@ -1,92 +1,61 @@
-2018-05-05T05:06:12.611Z - normal: Load ~/.CocosCreator/settings.json
-2018-05-05T05:06:12.616Z - normal: checking language setting...
-2018-05-05T05:06:12.616Z - normal: Language: zh
-2018-05-05T05:06:13.807Z - success: protocol editor-framework registered
-2018-05-05T05:06:13.808Z - success: protocol app registered
-2018-05-05T05:06:13.808Z - success: protocol theme registered
-2018-05-05T05:06:13.809Z - success: protocol packages registered
-2018-05-05T05:06:13.809Z - success: protocol unpack registerred
-2018-05-05T05:06:13.809Z - success: protocol disable-commonjs registerred
-2018-05-05T05:06:13.953Z - normal: connected!
-2018-05-05T05:06:13.958Z - normal: Check project /Users/huangke/Project/CocosCreator/smove
-2018-05-05T05:06:13.961Z - normal: Initializing Cocos2d
-2018-05-05T05:06:14.299Z - normal: Initializing Asset Database
-2018-05-05T05:06:14.348Z - success: protocol uuid registerred
-2018-05-05T05:06:14.349Z - success: protocol db registerred
-2018-05-05T05:06:14.349Z - success: protocol thumbnail registerred
-2018-05-05T05:06:14.349Z - normal: Loading editor/builtin packages
-2018-05-05T05:06:14.387Z - success: anysdk loaded
-2018-05-05T05:06:14.548Z - success: assets loaded
-2018-05-05T05:06:14.554Z - success: builder loaded
-2018-05-05T05:06:14.557Z - success: cocos-analytics loaded
-2018-05-05T05:06:14.564Z - success: console loaded
-2018-05-05T05:06:14.571Z - success: hierarchy loaded
-2018-05-05T05:06:14.577Z - success: inspector loaded
-2018-05-05T05:06:14.580Z - success: keystore loaded
-2018-05-05T05:06:14.596Z - success: node-library loaded
-2018-05-05T05:06:14.598Z - success: package-asset loaded
-2018-05-05T05:06:14.600Z - success: preferences loaded
-2018-05-05T05:06:14.604Z - success: project-exporter loaded
-2018-05-05T05:06:14.627Z - success: project-importer loaded
-2018-05-05T05:06:14.631Z - success: project-settings loaded
-2018-05-05T05:06:14.637Z - success: ui-kit loaded
-2018-05-05T05:06:14.644Z - success: ui-grid loaded
-2018-05-05T05:06:14.650Z - success: scene loaded
-2018-05-05T05:06:14.652Z - success: sprite-editor loaded
-2018-05-05T05:06:14.662Z - success: store loaded
-2018-05-05T05:06:14.670Z - success: timeline loaded
-2018-05-05T05:06:14.670Z - normal: Loading builtin packages
-2018-05-05T05:06:14.675Z - success: asset-db-debugger loaded
-2018-05-05T05:06:14.676Z - success: color-picker loaded
-2018-05-05T05:06:14.681Z - success: package-manager loaded
-2018-05-05T05:06:14.689Z - success: sdkbox loaded
-2018-05-05T05:06:14.695Z - success: tester loaded
-2018-05-05T05:06:14.701Z - success: ui-kit-preview-extra loaded
-2018-05-05T05:06:14.705Z - success: ui-kit-preview loaded
-2018-05-05T05:06:14.708Z - success: ui-tree loaded
-2018-05-05T05:06:16.298Z - normal: Initializing project /Users/huangke/Project/CocosCreator/smove
-2018-05-05T05:06:16.303Z - normal: Loading packages
-2018-05-05T05:06:16.312Z - normal: Watching packages
-2018-05-05T05:06:16.335Z - normal: Run Application
-2018-05-05T05:06:18.257Z - success: preview server running at http://localhost:7456
-2018-05-05T05:06:24.540Z - normal: 1.8.2
-2018-05-05T05:06:25.012Z - failed: load script [blockPool] failed : Error: Cannot find module 'blockPool'
-    at Module._resolveFilename (module.js:470:15)
-    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
-    at Function.Module._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:1361)
-    at Function.Module._load (module.js:418:25)
-    at Module.require (module.js:498:17)
-    at require (internal/module.js:20:19)
-    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:967)
-    at /Users/huangke/Project/CocosCreator/smove/temp/quick-scripts/assets/Script/block.js:1:347
-    at __define (/Users/huangke/Project/CocosCreator/smove/temp/quick-scripts/assets/Script/block.js:8:17)
-    at /Users/huangke/Project/CocosCreator/smove/temp/quick-scripts/assets/Script/block.js:74:13
-2018-05-05T07:32:58.680Z - failed: [db-task][sync-changes] Failed to import asset /Users/huangke/Project/CocosCreator/smove/assets/Script/block.js, message: Compile error: SyntaxError: /Users/huangke/Project/CocosCreator/smove/assets/Script/block.js: Unexpected token, expected ) (51:84)
-  49 |             case Direction.down:
-  50 |                 this.node.y -= this.speed;
-> 51 |                 if(this.node.y < this._game.centerNode.y + cc.winSize.height/2 - 40 {
-     |                                                                                     ^
-  52 |                     BlockPool.releaseBlock(this);
-  53 |                 }
-  54 |                 break;
-    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
-    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1761:8)
-    at Parser.pp.expect (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1749:33)
-    at Parser.pp$3.parseParenExpression (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3790:8)
-    at Parser.pp$1.parseIfStatement (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:2058:20)
-    at Parser.pp$1.parseStatement (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1846:19)
-    at Parser.pp$1.parseSwitchStatement (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:2114:34)
-    at Parser.pp$1.parseStatement (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1850:19)
-    at Parser.pp$1.parseBlockBody (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:2268:21)
-    at Parser.pp$1.parseBlock (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:2247:8)
-2018-05-05T07:48:47.377Z - failed: [db-task][sync-changes] Failed to import asset /Users/huangke/Project/CocosCreator/smove/assets/Script/HelloWorld.js, message: Compile error: SyntaxError: /Users/huangke/Project/CocosCreator/smove/assets/Script/HelloWorld.js: Unexpected token, expected , (62:4)
-  60 |     }
-  61 | 
-> 62 |     createBlock: function() {
-     |     ^
-  63 |         var random = cc.rand();
-  64 |         var dir = Math.round(random) % 4;
-  65 |         var down = [cc.p(this.centerNode.x - 80,this.centerNode.y + cc.winSize.height/2 + 40),cc.p(this.centerNode.x,this.centerNode.y + cc.winSize.height/2 + 40),cc.p(this.centerNode.x + 80,this.centerNode.y + cc.winSize.height/2 + 40)];
+2018-05-19T07:25:01.612Z - normal: Load ~/.CocosCreator/settings.json
+2018-05-19T07:25:01.616Z - normal: checking language setting...
+2018-05-19T07:25:01.616Z - normal: Language: zh
+2018-05-19T07:25:02.580Z - success: protocol editor-framework registered
+2018-05-19T07:25:02.580Z - success: protocol app registered
+2018-05-19T07:25:02.581Z - success: protocol theme registered
+2018-05-19T07:25:02.581Z - success: protocol packages registered
+2018-05-19T07:25:02.581Z - success: protocol unpack registerred
+2018-05-19T07:25:02.582Z - success: protocol disable-commonjs registerred
+2018-05-19T07:25:02.698Z - normal: connected!
+2018-05-19T07:25:02.702Z - normal: Check project /Users/huangke/Project/CocosCreator/smove
+2018-05-19T07:25:02.704Z - normal: Initializing Cocos2d
+2018-05-19T07:25:02.989Z - normal: Initializing Asset Database
+2018-05-19T07:25:03.033Z - success: protocol uuid registerred
+2018-05-19T07:25:03.033Z - success: protocol db registerred
+2018-05-19T07:25:03.033Z - success: protocol thumbnail registerred
+2018-05-19T07:25:03.033Z - normal: Loading editor/builtin packages
+2018-05-19T07:25:03.062Z - success: anysdk loaded
+2018-05-19T07:25:03.196Z - success: assets loaded
+2018-05-19T07:25:03.200Z - success: builder loaded
+2018-05-19T07:25:03.202Z - success: cocos-analytics loaded
+2018-05-19T07:25:03.208Z - success: console loaded
+2018-05-19T07:25:03.214Z - success: hierarchy loaded
+2018-05-19T07:25:03.219Z - success: inspector loaded
+2018-05-19T07:25:03.221Z - success: keystore loaded
+2018-05-19T07:25:03.226Z - success: node-library loaded
+2018-05-19T07:25:03.229Z - success: package-asset loaded
+2018-05-19T07:25:03.231Z - success: preferences loaded
+2018-05-19T07:25:03.234Z - success: project-exporter loaded
+2018-05-19T07:25:03.262Z - success: project-importer loaded
+2018-05-19T07:25:03.265Z - success: project-settings loaded
+2018-05-19T07:25:03.269Z - success: ui-kit loaded
+2018-05-19T07:25:03.274Z - success: ui-grid loaded
+2018-05-19T07:25:03.279Z - success: scene loaded
+2018-05-19T07:25:03.280Z - success: sprite-editor loaded
+2018-05-19T07:25:03.290Z - success: store loaded
+2018-05-19T07:25:03.296Z - success: timeline loaded
+2018-05-19T07:25:03.296Z - normal: Loading builtin packages
+2018-05-19T07:25:03.300Z - success: asset-db-debugger loaded
+2018-05-19T07:25:03.301Z - success: color-picker loaded
+2018-05-19T07:25:03.305Z - success: package-manager loaded
+2018-05-19T07:25:03.311Z - success: sdkbox loaded
+2018-05-19T07:25:03.315Z - success: tester loaded
+2018-05-19T07:25:03.320Z - success: ui-kit-preview-extra loaded
+2018-05-19T07:25:03.325Z - success: ui-kit-preview loaded
+2018-05-19T07:25:03.329Z - success: ui-tree loaded
+2018-05-19T07:25:04.465Z - normal: Initializing project /Users/huangke/Project/CocosCreator/smove
+2018-05-19T07:25:04.469Z - normal: Loading packages
+2018-05-19T07:25:04.473Z - normal: Watching packages
+2018-05-19T07:25:04.483Z - normal: Run Application
+2018-05-19T07:25:05.056Z - failed: [db-task][init] Failed to import asset /Users/huangke/Project/CocosCreator/smove/assets/Script/Game.js, message: Compile error: SyntaxError: /Users/huangke/Project/CocosCreator/smove/assets/Script/Game.js: Unexpected token, expected , (80:15)
+  78 |         this._player.getComponent("player").reset();
+  79 |     }.
+> 80 |     onStartGame: function() {
+     |                ^
+  81 |         BlockPool.hideAllBlock();
+  82 |         this._isStart = true;
+  83 |         this._dt = 0;
     at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
     at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1761:8)
     at Parser.pp.expect (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1749:33)
@@ -97,75 +66,13 @@
     at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
     at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
     at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3344:19)
-2018-05-05T08:26:25.523Z - failed: [db-task][sync-changes] Failed to import asset /Users/huangke/Project/CocosCreator/smove/assets/Script/block.js, message: Compile error: SyntaxError: /Users/huangke/Project/CocosCreator/smove/assets/Script/block.js: Unexpected token (11:18)
-   9 |         _isInit: false,
-  10 |         _game: null,
-> 11 |         _isCached = false
-     |                   ^
-  12 |     },
-  13 | 
-  14 |     create: function(pos,speed,dir,game) {
-    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
-    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1761:8)
-    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3370:10)
-    at Parser.pp$3.parseExprListItem (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4312:16)
-    at Parser.pp$3.parseCallExpressionArguments (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3573:20)
-    at Parser.pp$3.parseSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3533:31)
-    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3504:15)
-    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3474:19)
-    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
-    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
-2018-05-05T08:32:22.043Z - failed: [db-task][sync-changes] Failed to import asset /Users/huangke/Project/CocosCreator/smove/assets/Script/block.js, message: Compile error: SyntaxError: /Users/huangke/Project/CocosCreator/smove/assets/Script/block.js: Unexpected token, expected , (69:4)
-  67 |     }
-  68 |     
-> 69 |     checkCollide: function() {
-     |     ^
-  70 |         var playPos = this._game._player.getPosition();
-  71 |         var distance = cc.pDistance(playPos, this.node.getPosition());
-  72 |         if(distance < (this._game.playerRadius + this._game.blockRadius) / 2) {
-    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
-    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1761:8)
-    at Parser.pp.expect (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1749:33)
-    at Parser.pp$3.parseObj (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3978:12)
-    at Parser.pp$3.parseExprAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3719:19)
-    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3494:19)
-    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3474:19)
-    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
-    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
-    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3344:19)
-2018-05-05T09:31:35.232Z - failed: [db-task][sync-changes] Failed to import asset /Users/huangke/Project/CocosCreator/smove/assets/Script/player.js, message: Compile error: SyntaxError: /Users/huangke/Project/CocosCreator/smove/assets/Script/player.js: Unexpected token (47:26)
-  45 |                         dir = Direction.down;
-  46 |                     }
-> 47 |                 } else if() {
-     |                           ^
-  48 | 
-  49 |                 }
-  50 |                 this.changePos(dir);
-    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
-    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1761:8)
-    at Parser.pp$3.parseExprAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3750:12)
-    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3494:19)
-    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3474:19)
-    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
-    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
-    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3344:19)
-    at Parser.pp$3.parseExpression (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3306:19)
-    at Parser.pp$3.parseParenExpression (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3789:18)
-2018-05-05T11:17:47.436Z - failed: [db-task][sync-changes] Failed to import asset /Users/huangke/Project/CocosCreator/smove/assets/Script/BlockPool.js, message: Compile error: SyntaxError: /Users/huangke/Project/CocosCreator/smove/assets/Script/BlockPool.js: Unexpected token, expected , (38:4)
-  36 |     }
-  37 | 
-> 38 |     hideAllBlock: function() {
-     |     ^
-  39 |         for(var i = 0 ; i < this.blockCache.length; i++) {
-  40 |             this.blockCache[i].hide();
-  41 |         }
-    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
-    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1761:8)
-    at Parser.pp.expect (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1749:33)
-    at Parser.pp$3.parseObj (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3978:12)
-    at Parser.pp$3.parseExprAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3719:19)
-    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3494:19)
-    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3474:19)
-    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
-    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
-    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3344:19)
+2018-05-19T07:25:05.384Z - success: preview server running at http://localhost:7456
+2018-05-19T07:25:10.266Z - normal: 1.8.2
+2018-05-19T09:27:31.540Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:63730
+2018-05-19T10:06:25.557Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:93507
+2018-05-19T10:06:25.561Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:93509
+2018-05-19T10:07:04.054Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:93906
+2018-05-19T10:07:04.057Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:93910
+2018-05-19T10:07:04.058Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:93912
+2018-05-19T10:07:04.060Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:93914
+2018-05-23T01:03:45.811Z - info: shutdown preview server

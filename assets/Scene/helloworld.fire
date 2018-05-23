@@ -66,16 +66,19 @@
       },
       {
         "__id__": 9
+      },
+      {
+        "__id__": 14
       }
     ],
     "_tag": -1,
     "_active": true,
     "_components": [
       {
-        "__id__": 14
+        "__id__": 16
       },
       {
-        "__id__": 15
+        "__id__": 17
       }
     ],
     "_prefab": null,
@@ -572,6 +575,80 @@
     }
   },
   {
+    "__type__": "cc.Node",
+    "_name": "score",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_tag": -1,
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 15
+      }
+    ],
+    "_prefab": null,
+    "_id": "c3kpbWJiFJRpldJLHFU51j",
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_cascadeOpacityEnabled": true,
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 0,
+      "height": 40
+    },
+    "_rotationX": 0,
+    "_rotationY": 0,
+    "_scaleX": 1,
+    "_scaleY": 1,
+    "_position": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 338
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_localZOrder": 0,
+    "_globalZOrder": 0,
+    "_opacityModifyRGB": false,
+    "groupIndex": 0
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 14
+    },
+    "_enabled": true,
+    "_useOriginalSize": false,
+    "_actualFontSize": 40,
+    "_fontSize": 40,
+    "_lineHeight": 40,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_N$string": "",
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "Arial",
+    "_N$overflow": 0
+  },
+  {
     "__type__": "cc.Canvas",
     "_name": "",
     "_objFlags": 0,
@@ -595,11 +672,17 @@
       "__id__": 2
     },
     "_enabled": true,
+    "scoreLabel": {
+      "__id__": 15
+    },
     "playPrefab": {
       "__uuid__": "0ee0ea11-2dcf-4bf9-a76b-0800e8f212c2"
     },
     "blockPrefab": {
       "__uuid__": "38601465-cee3-4904-8d5c-4134e8f035ab"
+    },
+    "bounsPrefab": {
+      "__uuid__": "48680c19-7743-4596-ba4c-a7278ae92fcd"
     },
     "centerNode": {
       "__id__": 8
@@ -608,6 +691,7 @@
       "__id__": 13
     },
     "_player": null,
+    "_bouns": null,
     "playerRadius": 65,
     "blockRadius": 70,
     "_blockPool": null,
@@ -615,6 +699,7 @@
     "_dt": 0,
     "_touchPosX": 0,
     "_touchPosY": 0,
-    "_isMoved": false
+    "_isMoved": false,
+    "_cellsTable": []
   }
 ]

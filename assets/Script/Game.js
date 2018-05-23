@@ -4,16 +4,20 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // label: {
-        //     default: null,
-        //     type: cc.Label
-        // },
-        // defaults, set visually when attaching this script to the Canvas
+        scoreLabel: {
+            default: null,
+            type: cc.Label
+        },
+        
         playPrefab: {
             default: null,
             type: cc.Prefab
         },
         blockPrefab: {
+            default: null,
+            type: cc.Prefab
+        },
+        bounsPrefab: {
             default: null,
             type: cc.Prefab
         },
@@ -27,6 +31,7 @@ cc.Class({
         },
 
         _player: null,
+        _bouns: null,
         playerRadius: 80,
         blockRadius: 80,
         _blockPool: null,
@@ -35,34 +40,81 @@ cc.Class({
 
         _touchPosX: 0,
         _touchPosY: 0,
-        _isMoved: false
+        _isMoved: false,
+
+        _cellsTable:[],
+
     },
 
     // use this for initialization
     onLoad: function () {
-        this._player = cc.instantiate(this.playPrefab);
-        this._player.getComponent("player")._game = this;
-        this.node.addChild(this._player);
+        this.score = 0;
+
+        this.initCellsTable();
+        this.createPlayer();
+        
         this.setTouchConstrol();
         this.startBtn.node.on("click", this.onStartGame, this);
+    },
+
+    initCellsTable: function() {
+        var xIndex = [-1,0,1];
+        var yIndex = [1,0,-1];
+        for(var i = 0; i < 3; i++) {
+            for(var j = 0; j < 3; j++) {
+                var index = {x:xIndex[i], y:yIndex[j]};
+                this._cellsTable.push(index);
+            }
+        }
+        this._cellsTable.forEach(element => {
+            cc.log("index: %d,%d",element.x,element.y);
+        });
+    },
+
+    createPlayer: function() {
+        if(!this._player) {
+            this._player = cc.instantiate(this.playPrefab);
+            this._player.getComponent("player")._game = this;
+            this.node.addChild(this._player, 1);
+        }
+        this._player.getComponent("player").reset();
+    },
+    
+    createBonus: function() {
+        this._bouns = cc.instantiate(this.bounsPrefab);
+        this._bouns.getComponent("Bonus")._game = this;
+        this.node.addChild(this._bouns, 2);
+    },
+    
+    checkBonus: function() {
+        if (this._bouns) {
+            this._bouns.getComponent("Bonus").onCollect();
+        }
+    },
+
+    addScore: function() {
+        this.score++;
+        this.scoreLabel.string = this.score.toString();
     },
 
     onStartGame: function() {
         BlockPool.hideAllBlock();
         this._isStart = true;
         this._dt = 0;
-        this.createBlock();
         this.startBtn.node.active = false;
-        if(this._player) {
-            this._player.setPosition(cc.p(0, 0));
-        }
+        
+        this._player.getComponent("player").reset();
+        this.createBonus();
+        this.createBlock();
     },
 
     gameOver: function () {
         BlockPool.cacheAllBlock();
         this._isStart = false;
         this.startBtn.node.active = true;
-
+        this.score = 0;
+        this.scoreLabel.string = "";
+        this._bouns.getComponent("Bonus").node.destroy();
         this._player.getComponent("player").stopAllActions();
     },
 
@@ -172,6 +224,5 @@ cc.Class({
                 this._isMoved = true;
             }
         }, this);
-    },
-
+    }
 });

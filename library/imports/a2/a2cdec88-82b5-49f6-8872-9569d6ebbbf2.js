@@ -22,7 +22,11 @@ cc.Class({
         this.setInputConstrol();
     },
 
-    start: function start() {},
+    reset: function reset() {
+        this.offSetX = 0;
+        this.offSetY = 0;
+        this.node.setPosition(cc.p(0, 0));
+    },
 
     stopAllActions: function stopAllActions() {
         this.offSetX = 0;
@@ -51,7 +55,7 @@ cc.Class({
                         dir = Direction.down;
                         break;
                 }
-                // self.changePos(dir);
+                self.changePos(dir);
             }
             // onKeyReleased: function(keyCode, event) {
             //     switch(keyCode) {
@@ -74,36 +78,41 @@ cc.Class({
             case Direction.left:
                 if (this.offSetX > this.minOffSet) {
                     // this.node.x -= this.moveSize;
-                    var action = cc.moveBy(this.actionDuration, -this.moveSize, 0);
-                    this.node.runAction(action);
+                    this.moveAction(-this.moveSize, 0);
                     this.offSetX--;
                 }
                 break;
             case Direction.right:
                 if (this.offSetX < this.maxOffSet) {
                     // this.node.x += this.moveSize;
-                    var action = cc.moveBy(this.actionDuration, this.moveSize, 0);
-                    this.node.runAction(action);
+                    this.moveAction(this.moveSize, 0);
                     this.offSetX++;
                 }
                 break;
             case Direction.up:
                 if (this.offSetY < this.maxOffSet) {
                     // this.node.y += this.moveSize;
-                    var action = cc.moveBy(this.actionDuration, 0, this.moveSize);
-                    this.node.runAction(action);
+                    this.moveAction(0, this.moveSize);
                     this.offSetY++;
                 }
                 break;
             case Direction.down:
                 if (this.offSetY > this.minOffSet) {
                     // this.node.y -= this.moveSize;
-                    var action = cc.moveBy(this.actionDuration, 0, -this.moveSize);
-                    this.node.runAction(action);
+                    this.moveAction(0, -this.moveSize);
                     this.offSetY--;
                 }
                 break;
         }
+    },
+
+    moveAction: function moveAction(moveX, moveY) {
+        var action = cc.moveBy(this.actionDuration, moveX, moveY);
+        var finished = cc.callFunc(function () {
+            this._game.checkBonus();
+        }, this);
+        var act = cc.sequence(action, finished);
+        this.node.runAction(act);
     }
 });
 
