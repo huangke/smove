@@ -9,7 +9,7 @@ cc.Class({
         maxOffSet: 1,
         minOffSet: -1,
         _game: null,
-        actionDuration: 0.1
+        actionDuration: 0.03
     },
 
     onLoad: function() {
@@ -105,6 +105,7 @@ cc.Class({
         var finished = cc.callFunc(function(){
             this._game.checkBonus();
         },this);
+        action.easing(cc.easeOut(this.actionDuration));
         var act = cc.sequence(action, finished);
         this.node.runAction(act);
     }

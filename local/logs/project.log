@@ -1,78 +1,76 @@
-2018-05-19T07:25:01.612Z - normal: Load ~/.CocosCreator/settings.json
-2018-05-19T07:25:01.616Z - normal: checking language setting...
-2018-05-19T07:25:01.616Z - normal: Language: zh
-2018-05-19T07:25:02.580Z - success: protocol editor-framework registered
-2018-05-19T07:25:02.580Z - success: protocol app registered
-2018-05-19T07:25:02.581Z - success: protocol theme registered
-2018-05-19T07:25:02.581Z - success: protocol packages registered
-2018-05-19T07:25:02.581Z - success: protocol unpack registerred
-2018-05-19T07:25:02.582Z - success: protocol disable-commonjs registerred
-2018-05-19T07:25:02.698Z - normal: connected!
-2018-05-19T07:25:02.702Z - normal: Check project /Users/huangke/Project/CocosCreator/smove
-2018-05-19T07:25:02.704Z - normal: Initializing Cocos2d
-2018-05-19T07:25:02.989Z - normal: Initializing Asset Database
-2018-05-19T07:25:03.033Z - success: protocol uuid registerred
-2018-05-19T07:25:03.033Z - success: protocol db registerred
-2018-05-19T07:25:03.033Z - success: protocol thumbnail registerred
-2018-05-19T07:25:03.033Z - normal: Loading editor/builtin packages
-2018-05-19T07:25:03.062Z - success: anysdk loaded
-2018-05-19T07:25:03.196Z - success: assets loaded
-2018-05-19T07:25:03.200Z - success: builder loaded
-2018-05-19T07:25:03.202Z - success: cocos-analytics loaded
-2018-05-19T07:25:03.208Z - success: console loaded
-2018-05-19T07:25:03.214Z - success: hierarchy loaded
-2018-05-19T07:25:03.219Z - success: inspector loaded
-2018-05-19T07:25:03.221Z - success: keystore loaded
-2018-05-19T07:25:03.226Z - success: node-library loaded
-2018-05-19T07:25:03.229Z - success: package-asset loaded
-2018-05-19T07:25:03.231Z - success: preferences loaded
-2018-05-19T07:25:03.234Z - success: project-exporter loaded
-2018-05-19T07:25:03.262Z - success: project-importer loaded
-2018-05-19T07:25:03.265Z - success: project-settings loaded
-2018-05-19T07:25:03.269Z - success: ui-kit loaded
-2018-05-19T07:25:03.274Z - success: ui-grid loaded
-2018-05-19T07:25:03.279Z - success: scene loaded
-2018-05-19T07:25:03.280Z - success: sprite-editor loaded
-2018-05-19T07:25:03.290Z - success: store loaded
-2018-05-19T07:25:03.296Z - success: timeline loaded
-2018-05-19T07:25:03.296Z - normal: Loading builtin packages
-2018-05-19T07:25:03.300Z - success: asset-db-debugger loaded
-2018-05-19T07:25:03.301Z - success: color-picker loaded
-2018-05-19T07:25:03.305Z - success: package-manager loaded
-2018-05-19T07:25:03.311Z - success: sdkbox loaded
-2018-05-19T07:25:03.315Z - success: tester loaded
-2018-05-19T07:25:03.320Z - success: ui-kit-preview-extra loaded
-2018-05-19T07:25:03.325Z - success: ui-kit-preview loaded
-2018-05-19T07:25:03.329Z - success: ui-tree loaded
-2018-05-19T07:25:04.465Z - normal: Initializing project /Users/huangke/Project/CocosCreator/smove
-2018-05-19T07:25:04.469Z - normal: Loading packages
-2018-05-19T07:25:04.473Z - normal: Watching packages
-2018-05-19T07:25:04.483Z - normal: Run Application
-2018-05-19T07:25:05.056Z - failed: [db-task][init] Failed to import asset /Users/huangke/Project/CocosCreator/smove/assets/Script/Game.js, message: Compile error: SyntaxError: /Users/huangke/Project/CocosCreator/smove/assets/Script/Game.js: Unexpected token, expected , (80:15)
-  78 |         this._player.getComponent("player").reset();
-  79 |     }.
-> 80 |     onStartGame: function() {
-     |                ^
-  81 |         BlockPool.hideAllBlock();
-  82 |         this._isStart = true;
-  83 |         this._dt = 0;
-    at Parser.pp$5.raise (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:4454:13)
-    at Parser.pp.unexpected (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1761:8)
-    at Parser.pp.expect (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:1749:33)
-    at Parser.pp$3.parseObj (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3978:12)
-    at Parser.pp$3.parseExprAtom (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3719:19)
-    at Parser.pp$3.parseExprSubscripts (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3494:19)
-    at Parser.pp$3.parseMaybeUnary (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3474:19)
-    at Parser.pp$3.parseExprOps (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3404:19)
-    at Parser.pp$3.parseMaybeConditional (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3381:19)
-    at Parser.pp$3.parseMaybeAssign (/Applications/CocosCreator.app/Contents/Resources/app.asar/node_modules/babylon/lib/index.js:3344:19)
-2018-05-19T07:25:05.384Z - success: preview server running at http://localhost:7456
-2018-05-19T07:25:10.266Z - normal: 1.8.2
-2018-05-19T09:27:31.540Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:63730
-2018-05-19T10:06:25.557Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:93507
-2018-05-19T10:06:25.561Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:93509
-2018-05-19T10:07:04.054Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:93906
-2018-05-19T10:07:04.057Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:93910
-2018-05-19T10:07:04.058Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:93912
-2018-05-19T10:07:04.060Z - warn: Error: ipc timeout. message: scene:query-node, session: scene@renderer:93914
-2018-05-23T01:03:45.811Z - info: shutdown preview server
+2018-07-21T06:21:12.595Z - normal: Load ~/.CocosCreator/settings.json
+2018-07-21T06:21:12.598Z - normal: checking language setting...
+2018-07-21T06:21:12.598Z - normal: Language: zh
+2018-07-21T06:21:13.576Z - success: protocol editor-framework registered
+2018-07-21T06:21:13.577Z - success: protocol app registered
+2018-07-21T06:21:13.577Z - success: protocol theme registered
+2018-07-21T06:21:13.577Z - success: protocol packages registered
+2018-07-21T06:21:13.577Z - success: protocol unpack registerred
+2018-07-21T06:21:13.577Z - success: protocol disable-commonjs registerred
+2018-07-21T06:21:13.672Z - normal: connected!
+2018-07-21T06:21:13.674Z - normal: Check project /Users/huangke/Project/CocosCreator/smove
+2018-07-21T06:21:13.676Z - normal: Initializing Cocos2d
+2018-07-21T06:21:13.936Z - normal: Initializing Asset Database
+2018-07-21T06:21:13.976Z - success: protocol uuid registerred
+2018-07-21T06:21:13.976Z - success: protocol db registerred
+2018-07-21T06:21:13.976Z - success: protocol thumbnail registerred
+2018-07-21T06:21:13.976Z - normal: Loading editor/builtin packages
+2018-07-21T06:21:14.008Z - success: anysdk loaded
+2018-07-21T06:21:14.147Z - success: assets loaded
+2018-07-21T06:21:14.151Z - success: builder loaded
+2018-07-21T06:21:14.153Z - success: cocos-analytics loaded
+2018-07-21T06:21:14.159Z - success: console loaded
+2018-07-21T06:21:14.191Z - success: fb-instant-games loaded
+2018-07-21T06:21:14.197Z - success: hierarchy loaded
+2018-07-21T06:21:14.202Z - success: inspector loaded
+2018-07-21T06:21:14.204Z - success: keystore loaded
+2018-07-21T06:21:14.214Z - success: node-library loaded
+2018-07-21T06:21:14.216Z - success: package-asset loaded
+2018-07-21T06:21:14.219Z - success: preferences loaded
+2018-07-21T06:21:14.222Z - success: project-exporter loaded
+2018-07-21T06:21:14.241Z - success: project-importer loaded
+2018-07-21T06:21:14.244Z - success: project-settings loaded
+2018-07-21T06:21:14.249Z - success: ui-kit loaded
+2018-07-21T06:21:14.253Z - success: ui-grid loaded
+2018-07-21T06:21:14.258Z - success: scene loaded
+2018-07-21T06:21:14.260Z - success: sprite-editor loaded
+2018-07-21T06:21:14.265Z - success: store loaded
+2018-07-21T06:21:14.272Z - success: timeline loaded
+2018-07-21T06:21:14.272Z - normal: Loading builtin packages
+2018-07-21T06:21:14.276Z - success: asset-db-debugger loaded
+2018-07-21T06:21:14.277Z - success: color-picker loaded
+2018-07-21T06:21:14.281Z - success: package-manager loaded
+2018-07-21T06:21:14.288Z - success: sdkbox loaded
+2018-07-21T06:21:14.294Z - success: tester loaded
+2018-07-21T06:21:14.298Z - success: ui-kit-preview-extra loaded
+2018-07-21T06:21:14.301Z - success: ui-kit-preview loaded
+2018-07-21T06:21:14.305Z - success: ui-tree loaded
+2018-07-21T06:21:15.424Z - normal: Initializing project /Users/huangke/Project/CocosCreator/smove
+2018-07-21T06:21:15.427Z - normal: Loading packages
+2018-07-21T06:21:15.432Z - normal: Watching packages
+2018-07-21T06:21:15.443Z - normal: Run Application
+2018-07-21T06:21:15.984Z - success: preview server running at http://localhost:7456
+2018-07-21T06:21:20.854Z - normal: 1.9.1
+2018-07-21T07:19:29.776Z - failed: load script [/Users/huangke/Project/CocosCreator/smove/temp/quick-scripts/assets/Script/BlockConfig.js] failed : ReferenceError: centerNode is not defined
+    at __define (/Users/huangke/Project/CocosCreator/smove/temp/quick-scripts/assets/Script/BlockConfig.js:11:18)
+    at /Users/huangke/Project/CocosCreator/smove/temp/quick-scripts/assets/Script/BlockConfig.js:51:13
+    at Object.<anonymous> (/Users/huangke/Project/CocosCreator/smove/temp/quick-scripts/assets/Script/BlockConfig.js:58:11)
+    at Object.<anonymous> (/Users/huangke/Project/CocosCreator/smove/temp/quick-scripts/assets/Script/BlockConfig.js:61:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)
+2018-07-21T07:19:29.778Z - failed: load script [BlockConfig] failed : ReferenceError: centerNode is not defined
+    at __define (/Users/huangke/Project/CocosCreator/smove/temp/quick-scripts/assets/Script/BlockConfig.js:11:18)
+    at /Users/huangke/Project/CocosCreator/smove/temp/quick-scripts/assets/Script/BlockConfig.js:51:13
+    at Object.<anonymous> (/Users/huangke/Project/CocosCreator/smove/temp/quick-scripts/assets/Script/BlockConfig.js:58:11)
+    at Object.<anonymous> (/Users/huangke/Project/CocosCreator/smove/temp/quick-scripts/assets/Script/BlockConfig.js:61:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.require (module.js:498:17)
+2018-07-22T09:35:06.475Z - info: shutdown preview server

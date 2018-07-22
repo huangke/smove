@@ -76,7 +76,7 @@ cc.Class({
         var playPos = this._game._player.getPosition();
         var distance = cc.pDistance(playPos, this.node.getPosition());
         if (distance < (this._game.playerRadius + this._game.blockRadius) / 2) {
-            this._game.gameOver();
+            // this._game.gameOver();
         }
     }
 });

@@ -6,6 +6,7 @@ cc._RF.push(module, '280c3rsZJJKnZ9RqbALVwtK', 'Game', __filename);
 
 var Direction = require("direction");
 var BlockPool = require("BlockPool");
+var BlockConfig = require("BlockConfig");
 cc.Class({
     extends: cc.Component,
 
@@ -40,7 +41,6 @@ cc.Class({
         _bouns: null,
         playerRadius: 80,
         blockRadius: 80,
-        _blockPool: null,
         _isStart: false,
         _dt: 0,
 
@@ -57,6 +57,7 @@ cc.Class({
         this.score = 0;
 
         this.initCellsTable();
+        BlockConfig.initConfig(this.centerNode);
         this.createPlayer();
 
         this.setTouchConstrol();
@@ -124,49 +125,34 @@ cc.Class({
         this._player.getComponent("player").stopAllActions();
     },
 
-    getRandom: function getRandom(randomRange, lastRandom) {
-        var random = cc.rand();
-        var ret = Math.round(random) % randomRange;
-        if (lastRandom && lastRandom == ret) {
-            return this.getRandom(randomRange, lastRandom);
-        }
-        return ret;
-    },
-
     createBlock: function createBlock() {
-        var random = cc.rand();
-        var dir = Math.round(random) % 4;
-        var down = [cc.p(this.centerNode.x - 80, this.centerNode.y + cc.winSize.height / 2 + 40), cc.p(this.centerNode.x, this.centerNode.y + cc.winSize.height / 2 + 40), cc.p(this.centerNode.x + 80, this.centerNode.y + cc.winSize.height / 2 + 40)];
-        var up = [cc.p(this.centerNode.x - 80, this.centerNode.y - cc.winSize.height / 2 - 40), cc.p(this.centerNode.x, this.centerNode.y - cc.winSize.height / 2 - 40), cc.p(this.centerNode.x + 80, this.centerNode.y - cc.winSize.height / 2 - 40)];
-        var right = [cc.p(this.centerNode.x - cc.winSize.width / 2 - 40, this.centerNode.y), cc.p(this.centerNode.x - cc.winSize.width / 2 - 40, this.centerNode.y + 80), cc.p(this.centerNode.x - cc.winSize.width / 2 - 40, this.centerNode.y - 80)];
-        var left = [cc.p(this.centerNode.x + cc.winSize.width / 2 + 40, this.centerNode.y), cc.p(this.centerNode.x + cc.winSize.width / 2 + 40, this.centerNode.y + 80), cc.p(this.centerNode.x + cc.winSize.width / 2 + 40, this.centerNode.y - 80)];
-        var dirTab = [];
-        switch (dir) {
-            case Direction.left:
-                dirTab = left;
-                break;
-            case Direction.right:
-                dirTab = right;
-                break;
-            case Direction.up:
-                dirTab = up;
-                break;
-            case Direction.down:
-                dirTab = down;
-                break;
+
+        var config = BlockConfig.getBlockConfig(this.score);
+        this.createOneBlock(config["first"].point, config["first"].speed, config["first"].dir);
+        cc.log("first dir: " + config["first"].dir);
+        if (config["second"]) {
+            this.createOneBlock(config["second"].point, config["second"].speed, config["second"].dir);
+            cc.log("second dir: " + config["second"].dir);
         }
-        var first = this.getRandom(3);
-        var second = this.getRandom(3, first);
-        this.createOneBlock(dirTab[first], 5, dir);
-        this.createOneBlock(dirTab[second], 5, dir);
-        cc.log("first: " + first + " second: " + second);
     },
 
+    getUpdateDelt: function getUpdateDelt() {
+        if (this.score <= 10) {
+            return 2;
+        } else if (this.score <= 20) {
+            return 1.7;
+        } else if (this.score <= 30) {
+            return 1.5;
+        } else if (this.score <= 40) {
+            return 1.2;
+        }
+        return 1;
+    },
     // called every frame
     update: function update(dt) {
         if (this._isStart == true) {
             this._dt += dt;
-            if (this._dt >= 2) {
+            if (this._dt >= this.getUpdateDelt()) {
                 this._dt = 0;
                 this.createBlock();
             }
